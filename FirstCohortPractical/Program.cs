@@ -42,6 +42,7 @@
             Console.WriteLine(s);
         }
 
+        Console.WriteLine("End of the class");
 
     }//closing of your method
    
