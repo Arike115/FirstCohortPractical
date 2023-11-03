@@ -1,50 +1,120 @@
 ﻿public class Program //class
-{ //opening of a class
+{
+    //paramaters
+    //Operators
+    //Arithmetic operators +,-,*,/,%,++ => increment of 1, -- decrement of 1
+    //Asignment Operators =,+=,-=,??
+    //Comparison Operators >,<,<=,>=
+    //logical operators
+    //relational operators
+    //Statements
+    //Conditional statement, if else, switch case
+    //conditional looping, for, foreach, do, dowhile
 
-    //Datatypes
-    //string
-    //interger int
-    //decimal
-    //float
-    //long
-    //double
-    //bool
-    //short
-    //byte
-    //string
-    //how to declare a datatype
-
-    static string Words = "chalk-board";
-    static int Number = 45362483;
-    decimal value = 127.6453m;
-    double v = 21632867394674764.557;
-    bool y = true;
-    float x = 374526664234742671423534678438683.7f;
-    long h = 219236754954239512;
-    byte o = 217;
-    short k = 7823;
-
-    //array
-    static string[] Data = { "wardrobe", "carpet", "chalk", "plate", "cup" };
-    int[] Numerical = { 675, 894, 464, 46737, 7463 };
+    static int v = 10;
+    static int x = 134;//field
+    static int y = 56;
+                            //parameters
     private static void Main(string[] args) //method
-    {//opening of your method
-        //{} curly braces
+    {
 
-        //statement
-        Console.WriteLine(Words);
-        Console.WriteLine(Number);
-        Console.WriteLine(999);
+        DiceGame();
 
-        //how to print an array
-        foreach (string  s in Data) 
+        int result = v + x;
+        result -= y;
+        Console.WriteLine(result);
+
+        //If else statement
+        if (v >= y && x > y)
         {
-            Console.WriteLine(s);
+            Console.WriteLine("the result is real");
+        }
+        else
+        {
+            Console.WriteLine("the result is fake");
         }
 
-        Console.WriteLine("End of the class");
+        if (v == 10 && x >= 56 && y < 100)
+        {
+            Console.WriteLine("Genius Result");
+        }
+        else
+        {
+            Console.WriteLine("not good");
+        }
 
-    }//closing of your method
+        if (v == 20 || x >= 56)
+        {
+            Console.WriteLine("Or Logical Result");
+        }
+        else
+        {
+            Console.WriteLine("not good");
+        }
+
+
+        //switch case statement
+        int day = 7;
+
+        switch (day)
+        {
+            case 1:
+                Console.WriteLine("Monday");
+                break;
+            case 2:
+                Console.WriteLine("Tuesday");
+                break;
+            case 3:
+                Console.WriteLine("Wednesday");
+                break;
+            case 4:
+                Console.WriteLine("Thursdays");
+                break;
+            case 5:
+                Console.WriteLine("Friday");
+                break;
+            default:
+                Console.WriteLine("day does not exist");
+                break;
+        }
+    }
+
+    public static void DiceGame()
+    {
+        Console.WriteLine("Pick your lucky Number from 1 to 10");
+        int result = int.Parse(Console.ReadLine());
+
+        switch(result)
+        {
+            case 1:
+            case 2:
+                Console.WriteLine("oops try again later");
+                break;
+            case 3:
+            case 4:
+                Console.WriteLine("Congratulations you won 1 million naira");
+                break;
+            case 5:
+            case 6:
+                Console.WriteLine("you lost");
+                break;
+            case 7:
+            case 8:
+                Console.WriteLine("Congratulations you won a free ticket");
+                break;
+            case 9:
+            case 10:
+                Console.WriteLine("almost there guess today is not your lucky day");
+                break;
+            default:
+                Console.WriteLine("Wrong Number pls try next time");
+                break;
+        }
+
+
+    }
+
+    
    
    
-}//closing of the class
+}
