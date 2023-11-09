@@ -6,28 +6,19 @@ using System.Threading.Tasks;
 
 namespace FirstCohortPractical
 {
-  //accessmodifier
-  //public
-  //private
-  //internal
-  //protected
-    class Students
+    //inheritance
+    public class Students //base class
     {
-       public static int v = 89; //field
 
-        public static void StudentName()
+        public static void CreateFullName(string Fullname, int Age)
         {
-            Console.WriteLine("welcome to this new topic");
-            StudentList();
+            DateTime DOB = DateTime.Now;
+            Console.WriteLine("The Name is {0}, he/she is {1} years old, he/she was born on{2}", Fullname,Age, DOB);
         }
 
-        private static void StudentList()
+        public static void CreateSchoolLevy(decimal Schoollevy)
         {
-            string[] studentdate = { "chioma", "Adanma", "Ngozie", "Ejiro", "Ben" };
-            foreach (string s in studentdate) 
-            {
-                Console.WriteLine(s);
-            }
+            Console.WriteLine("The schoolLevy amount{0}",Schoollevy );
         }
     }
 }

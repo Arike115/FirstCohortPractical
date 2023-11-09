@@ -6,9 +6,17 @@ public class Program //class
 
     private static void Main(string[] args) //method
     {
-        Students.StudentName();
-        Console.WriteLine(Students.v);
-        
+        Console.WriteLine("Teacher's class ......");
+        Teacher.CreateFullName("Ben Thomas", 25);
+        Teacher.CreateSalary(50000);
+        Teacher.CreateJobType("English Teacher");
+        Console.WriteLine("Student's class ........");
+        Students.CreateFullName("Joseph Benjamin", 13);
+        Students.CreateSchoolLevy(150000);
+        Console.WriteLine("Otherworker's class .........");
+        OtherWorkers.CreateJobType("Gardner");
+        OtherWorkers.CreateSalary(55000);
+
     }
 
 
