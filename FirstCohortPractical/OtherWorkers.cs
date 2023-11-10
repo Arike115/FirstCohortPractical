@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FirstCohortPractical
 {
-    public class OtherWorkers : Teacher
+    public class OtherWorkers 
     {
     }
 }

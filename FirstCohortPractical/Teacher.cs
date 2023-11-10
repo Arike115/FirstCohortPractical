@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FirstCohortPractical
 {
-            //derived class
-    public class Teacher : Students
+        //static class   
+    public static class Teacher 
     {
         public static void CreateSalary(decimal Schoollevy)
         {

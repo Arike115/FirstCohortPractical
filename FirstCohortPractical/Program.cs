@@ -6,17 +6,18 @@ public class Program //class
 
     private static void Main(string[] args) //method
     {
-        Console.WriteLine("Teacher's class ......");
-        Teacher.CreateFullName("Ben Thomas", 25);
-        Teacher.CreateSalary(50000);
-        Teacher.CreateJobType("English Teacher");
-        Console.WriteLine("Student's class ........");
-        Students.CreateFullName("Joseph Benjamin", 13);
-        Students.CreateSchoolLevy(150000);
-        Console.WriteLine("Otherworker's class .........");
-        OtherWorkers.CreateJobType("Gardner");
-        OtherWorkers.CreateSalary(55000);
+        ////static class
+        //Teacher.CreateSalary(6600);
 
+        //non.static class
+        //instance
+        Students info = new Students("Toyota Camry", 3000000, "2019mv"); //instantiation 
+        info.CarDetails();
+        info.CarAmount();
+       
+
+        //Students.CreateFullName("johin", 89);
+      
     }
 
 
