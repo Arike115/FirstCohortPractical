@@ -3,7 +3,11 @@
 public class Program //class
 {
     //access modifier
-
+    //Types OF Class
+    //Enum
+    //Interface
+    //Abstract
+    //Struct
     private static void Main(string[] args) //method
     {
         ////static class

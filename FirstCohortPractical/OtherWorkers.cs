@@ -8,5 +8,25 @@ namespace FirstCohortPractical
 {
     public class OtherWorkers 
     {
+        //field
+        public int v = 10;
+
+        //property
+        public int v1 { get; set; } = 60;
     }
+
+    public enum DaysOfTheWeek
+    { 
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday,
+        Unknown
+    }
+
+
+
 }
