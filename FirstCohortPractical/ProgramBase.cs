@@ -1,15 +1,15 @@
 ﻿using FirstCohortPractical;
+using System.Threading.Channels;
 
 public class ProgramBase
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public Gender Gender { get; set; }
-    public DayOfWeek DayOfWeek { get; set; }
-
-    public void CreateUser()
+    public string Food()
     {
-        Console.WriteLine("The user in charge is a {0}", Gender.Male);
-        Console.WriteLine("The current day is {0}",DayOfWeek.Sunday);
+        return ("I have Varieties of food");
+    }
+
+    public string Drinks()
+    {
+        return ("I have Varieties of Drinks");
     }
 }
