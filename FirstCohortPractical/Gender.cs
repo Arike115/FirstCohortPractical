@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FirstCohortPractical
 {
-    internal class DaysOfTheMonth
+    public enum Gender
     {
+        Male,
+        Female,
+        Unknown
     }
 }
