@@ -6,24 +6,28 @@ using System.Threading.Tasks;
 
 namespace FirstCohortPractical
 {
-        //static class
-        //generic
-    public static class Teacher<T> 
+    //static class
+    //generic
+    public delegate bool Ispromotable(Teacher teacher); 
+    public class Teacher
     {
-        public static void CreateSalary(T Schoollevy)
+        //properties
+        public int TeacherId { get; set; }
+        public string TeacherName { get; set; }
+        public decimal TeacherSalary { get; set; }   
+        public int Experience { get; set; }
+
+        public static void PromotedTeacher(List<Teacher> teacherlist, Ispromotable isactive)
         {
-            Console.WriteLine("The salary amount = {0}", Schoollevy);
+            foreach(var teacher in teacherlist)
+            {
+                if(isactive(teacher))
+                {
+                    Console.WriteLine( teacher.TeacherName + "  is promoted");
+                }
+
+            }
         }
 
-        public static void CreateJobType(string jobtype)
-        {
-            Console.WriteLine("The StaffRole is = {0}", jobtype);
-        }
-
-
-        public static T calculator(T value1, T value2, T value3)
-        {
-            return value2;
-        }
     }
 }
