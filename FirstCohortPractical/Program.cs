@@ -4,27 +4,54 @@
 using FirstCohortPractical;
 using System.Linq.Expressions;
 
-public class Program //class
+public class Program
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="args"></param>
-    private static void Main(string[] args) //method
-    {
-        Teacher.calculator(45, 36);
-        var numbers = new List<int> { 64, 37, 89, 0, 23 };
-        Teacher.newcalculator(numbers);
+    //ICollection
+    //IList
+    //List
 
-#if (DEBUG && !VC_V6)
-        Console.WriteLine("Debug is defined");
-#elif (!DEBUG && VC_V6)
-        Console.WriteLine("VC_V6 is defined");
-#elif (DEBUG && VC_V6)
-        Console.WriteLine("Debug and VC_V6 are defined");
-#else
-        Console.WriteLine("Debug and VC_V6 are not  defined");
-#endif
+    private static void Main(string[] args) 
+    {
+        List<string> Data = new List<string>();
+        Data.Add("chalk");
+        Data.Add("Tyron");
+        Data.Add("Clone");
+        Data.Add("Reserve");
+        Data.Add("Align");
+        Data.Add("Disregard");
+
+        CollectionDisplay(Data);
+        IListDisplay(Data);
+        ListDisplay(Data);
+
+    }
+
+    public static void CollectionDisplay(ICollection<string> mylist)
+    {
+        mylist.Remove("");
+        foreach(var item in mylist)
+        {
+            Console.WriteLine("the icollection elements are as follows:" + item);
+        }
+    }
+
+    public static void IListDisplay(IList<string> mylist)
+    {
+        mylist.RemoveAt(3);
+        foreach (var item in mylist)
+        {
+            Console.WriteLine("the IList elements are as follows:" + item);
+        }
+    }
+
+    public static void ListDisplay(List<string> mylist)
+    {
+        mylist.Sort();
+        mylist.ElementAt(0);
+        foreach (var item in mylist)
+        {
+            Console.WriteLine("the List elements are as follows:" + item);
+        }
     }
 
 }
