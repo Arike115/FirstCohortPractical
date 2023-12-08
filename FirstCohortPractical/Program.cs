@@ -1,25 +1,30 @@
-﻿using FirstCohortPractical;
+﻿
+#define Debug
+#define VC_V6
+using FirstCohortPractical;
 using System.Linq.Expressions;
 
 public class Program //class
 {
-    //exception handling
-    //try
-    //catch
-    //finally
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="args"></param>
     private static void Main(string[] args) //method
     {
-        //array
-        try
-        {
-            int[] numbers = { 6, 5, 6, 7, 8 };
-            Console.WriteLine(numbers[11]);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
-       
+        Teacher.calculator(45, 36);
+        var numbers = new List<int> { 64, 37, 89, 0, 23 };
+        Teacher.newcalculator(numbers);
+
+#if (DEBUG && !VC_V6)
+        Console.WriteLine("Debug is defined");
+#elif (!DEBUG && VC_V6)
+        Console.WriteLine("VC_V6 is defined");
+#elif (DEBUG && VC_V6)
+        Console.WriteLine("Debug and VC_V6 are defined");
+#else
+        Console.WriteLine("Debug and VC_V6 are not  defined");
+#endif
     }
 
 }
