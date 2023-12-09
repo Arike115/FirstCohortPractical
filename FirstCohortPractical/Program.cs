@@ -6,53 +6,67 @@ using System.Linq.Expressions;
 
 public class Program
 {
-    //ICollection
-    //IList
-    //List
+    //Queue
+    //Stack
+    //Dictionary
 
-    private static void Main(string[] args) 
+    private static void Main(string[] args)
     {
-        List<string> Data = new List<string>();
-        Data.Add("chalk");
-        Data.Add("Tyron");
-        Data.Add("Clone");
-        Data.Add("Reserve");
-        Data.Add("Align");
-        Data.Add("Disregard");
 
-        CollectionDisplay(Data);
-        IListDisplay(Data);
-        ListDisplay(Data);
+        Teacher teach = new Teacher()
+        { 
+            Id = 1,
+            Name = "Adrian",
+        };
 
-    }
-
-    public static void CollectionDisplay(ICollection<string> mylist)
-    {
-        mylist.Remove("");
-        foreach(var item in mylist)
+        Teacher teach1 = new Teacher()
         {
-            Console.WriteLine("the icollection elements are as follows:" + item);
+            Id = 2,
+            Name = "Ben",
+        };
+
+        Teacher teach2 = new Teacher()
+        {
+            Id = 3,
+            Name = "Grace",
+        };
+
+        //Queue
+        Queue<Teacher> empqueue = new Queue<Teacher>();
+
+        empqueue.Enqueue(teach);
+        empqueue.Enqueue(teach1);
+        empqueue.Enqueue(teach2);
+
+        var data = empqueue.Dequeue();
+        //Console.WriteLine(data.Id +"  "+ data.Name);
+
+        //stack
+        Stack<Teacher> empstack = new Stack<Teacher>();
+
+        empstack.Push(teach);
+        empstack.Push(teach1);
+        empstack.Push(teach2);
+
+        var datas = empstack.Pop();
+        //Console.WriteLine(datas.Id + "  " + datas.Name);
+
+
+        Dictionary<string, string> contactlist = new Dictionary<string, string>();
+        contactlist.Add("Adrian", "09087588765");
+        contactlist.Add("Grace", "09142577213");
+        contactlist.Add("Liam", "08092938111");
+        contactlist.Add("Ben", "07092782812");
+        contactlist.Add("Jude", "08142511123");
+
+        foreach(var contact in contactlist)
+        {
+            Console.WriteLine("Contact-Name: {0}, Phone-Number: {1}", contact.Key, contact.Value);
         }
+
     }
 
-    public static void IListDisplay(IList<string> mylist)
-    {
-        mylist.RemoveAt(3);
-        foreach (var item in mylist)
-        {
-            Console.WriteLine("the IList elements are as follows:" + item);
-        }
-    }
 
-    public static void ListDisplay(List<string> mylist)
-    {
-        mylist.Sort();
-        mylist.ElementAt(0);
-        foreach (var item in mylist)
-        {
-            Console.WriteLine("the List elements are as follows:" + item);
-        }
-    }
 
 }
  
