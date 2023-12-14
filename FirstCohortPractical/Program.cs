@@ -1,69 +1,48 @@
 ﻿
-#define Debug
-#define VC_V6
+
 using FirstCohortPractical;
 using System.Linq.Expressions;
 
 public class Program
 {
-    //Queue
-    //Stack
-    //Dictionary
+    //Linq
+    //language-integrated query
+    //query syntax or query expression
+    //method syntax or method extension or fluent syntax
+    //Linqs have diferrent methods group inside the different categories
+    //filtering ===== where, offtype
+    //projection ==== select, select many 
 
     private static void Main(string[] args)
     {
-
-        Teacher teach = new Teacher()
-        { 
-            Id = 1,
-            Name = "Adrian",
+        IList<Teacher> list = new List<Teacher>()
+        {
+            new Teacher() {Id = 1, Name = "Ada", Age = 98},
+            new Teacher() {Id = 2, Name = "Precious", Age = 28},
+            new Teacher() {Id = 3, Name = "Emeka", Age = 23},
+            new Teacher() {Id = 4, Name = "Grace", Age = 86},
+            new Teacher() {Id = 5, Name = "Ben", Age = 45},
         };
 
-        Teacher teach1 = new Teacher()
+        //query syntax
+        var adult = from s in list
+                    where s.Age > 28
+                    select s;
+
+        //method syntax
+        var result = list.Where(s => s.Age > 28);
+
+        foreach(var item in adult )
         {
-            Id = 2,
-            Name = "Ben",
-        };
-
-        Teacher teach2 = new Teacher()
-        {
-            Id = 3,
-            Name = "Grace",
-        };
-
-        //Queue
-        Queue<Teacher> empqueue = new Queue<Teacher>();
-
-        empqueue.Enqueue(teach);
-        empqueue.Enqueue(teach1);
-        empqueue.Enqueue(teach2);
-
-        var data = empqueue.Dequeue();
-        //Console.WriteLine(data.Id +"  "+ data.Name);
-
-        //stack
-        Stack<Teacher> empstack = new Stack<Teacher>();
-
-        empstack.Push(teach);
-        empstack.Push(teach1);
-        empstack.Push(teach2);
-
-        var datas = empstack.Pop();
-        //Console.WriteLine(datas.Id + "  " + datas.Name);
-
-
-        Dictionary<string, string> contactlist = new Dictionary<string, string>();
-        contactlist.Add("Adrian", "09087588765");
-        contactlist.Add("Grace", "09142577213");
-        contactlist.Add("Liam", "08092938111");
-        contactlist.Add("Ben", "07092782812");
-        contactlist.Add("Jude", "08142511123");
-
-        foreach(var contact in contactlist)
-        {
-            Console.WriteLine("Contact-Name: {0}, Phone-Number: {1}", contact.Key, contact.Value);
+            Console.WriteLine(item.Name);
         }
 
+        List<string> words = new List<string>() {"data","chalk","recharge"};
+        var data = words.Select(s => s);
+        foreach(var item in data )
+        {
+            Console.WriteLine(item);
+        }
     }
 
 
